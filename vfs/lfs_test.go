@@ -135,7 +135,7 @@ func TestReadSegment(t *testing.T) {
 
 func TestVFSWrite(t *testing.T) {
 	fss, err := OpenFS(&Options{
-		FsPerm:    conf.FsPerm,
+		FSPerm:    conf.FSPerm,
 		Path:      conf.Settings.Path,
 		Threshold: conf.Settings.Region.Threshold,
 	})

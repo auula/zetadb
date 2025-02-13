@@ -152,7 +152,7 @@ func (lfs *LogStructuredFS) DeleteSegment(key string) error {
 	delete(imap.index, inum)
 	imap.mu.Unlock()
 
-	seg := NewTombstoneSegment([]byte(key))
+	seg := NewTombstoneSegment(key)
 	err := appendDataWithLock(&lfs.mu, lfs.active, seg)
 	if err != nil {
 		return err
